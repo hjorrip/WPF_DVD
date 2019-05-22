@@ -1,0 +1,24 @@
+﻿<Window x:Class="DVD.NewDvdWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DVD"
+        mc:Ignorable="d"
+        Title="Nýskrá mynd" Height="340.511" Width="593.066" Loaded="Window_Loaded">
+    <Grid>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="113,52,0,0" TextWrapping="Wrap" Text="{Binding Title}" VerticalAlignment="Top" Width="154"/>
+        <DatePicker SelectedDate="{Binding Released}" HorizontalAlignment="Left" Margin="113,80,0,0" VerticalAlignment="Top" Width="154"/>
+        <ListBox x:Name="lbAllGenres" BorderBrush="Black" BorderThickness="1" ItemsSource="{Binding}" DisplayMemberPath="Name" HorizontalAlignment="Left" Height="109" Margin="349,108,0,0" VerticalAlignment="Top" Width="135" MouseDoubleClick="lbAllGenres_MouseDoubleClick"/>
+        <ListBox ItemsSource="{Binding Genres}" BorderThickness="1" BorderBrush="Black" DisplayMemberPath="Name" HorizontalAlignment="Left" Height="109" Margin="113,109,0,0" VerticalAlignment="Top" Width="154"/>
+        <TextBlock HorizontalAlignment="Left" Margin="44,52,0,0" TextWrapping="Wrap" Text="Titill:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="44,80,0,0" TextWrapping="Wrap" Text="Gefin út:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="44,109,0,0" TextWrapping="Wrap" Text="Tegund:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="349,61,0,0" TextWrapping="Wrap" Text="Allar tegundir" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="349,83,0,0" TextWrapping="Wrap" Text="Tvísmelltu til að skrá" VerticalAlignment="Top" FontStyle="Italic"/>
+        <Button x:Name="btnAdd" Content="Skrá" HorizontalAlignment="Left" Margin="192,236,0,0" VerticalAlignment="Top" Width="75" Click="btnAdd_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="44,31,0,0" TextWrapping="Wrap" Text="Eigandi:" VerticalAlignment="Top"/>
+        <TextBlock x:Name="txtSelectedDvdOwner" HorizontalAlignment="Left" Margin="113,31,0,0" TextWrapping="Wrap" Text="{Binding FullName}" VerticalAlignment="Top" Width="154"/>
+
+    </Grid>
+</Window>
